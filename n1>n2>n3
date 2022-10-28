@@ -1,0 +1,43 @@
+package be;
+import java.util.Scanner;
+
+public class A {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int num1;
+		int num2;
+		int num3;
+		
+		System.out.println("Informe o primeiro numero:");
+		num1 = sc.nextInt();
+		sc.nextLine();
+		System.out.println("Informe o segundo numero:");
+		num2 = sc.nextInt();
+		sc.nextLine();
+		System.out.println("Informe o Terceiro numero:");
+		num3 = sc.nextInt();
+		//System.out.println("n1:"+num1+" n2:"+num2+" n3:"+num3);
+		if (num1>num2) { //n1>n2
+			if(num2>num3)//n1>n2>n3
+				System.out.println("N1 é o maior num "+num1);
+			else {
+				if (num1>num3)//n1>n3>n2
+					System.out.println("N1 é o maior num "+num1);
+				else //n3>n1>n2
+					System.out.println("N3 é o maior num "+num3);
+			}
+		}
+		else { //n2>n1
+			if (num2>num3)
+				System.out.println("N2 é o maior num "+num2);
+			else {
+				if(num3>num2) {
+					System.out.println("N3 é o maior num "+num3);
+				}
+			}
+		}
+		}
+
+
+	}
