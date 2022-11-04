@@ -14,3 +14,33 @@ public class Arss {
 	}
 
 }
+
+
+
+package lp2;
+import java.util.Scanner;
+public class Arss {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int num, fat=1;
+		
+		System.out.println("INsira  numero N, para ser calculado o fatorial");
+		num = sc.nextInt();
+		do {
+		if(num>0) {
+			System.out.print("Fatorial de "+num);
+			while(num>1) {
+				fat = num *fat;
+				num --;
+			}
+			System.out.println(" é:"+fat);			
+		}else {
+			System.out.println("Invalido,numero negativo ou 0");
+			System.out.println("Insira novamente:");
+			num = sc.nextInt();
+		}break;
+		}while(true);
+	}
+
+}
