@@ -16,7 +16,7 @@ public class Arss {
 }
 
 
-
+//////////////////////////////
 package lp2;
 import java.util.Scanner;
 public class Arss {
@@ -41,6 +41,71 @@ public class Arss {
 			num = sc.nextInt();
 		}break;
 		}while(true);
+	}
+
+}
+
+///////////////////////////////////////////
+//CLASSE
+package emprego;
+
+public class Empregado {
+	public String nome;
+	public String sobreNome;
+	public float sal;
+
+
+public Empregado(String nome, String sobreNome, float sal) {
+	this.nome = nome;
+	this.sobreNome = sobreNome;
+	this.sal = sal;
+}
+public Empregado() {
+	
+}
+public String getNome() {
+	return nome;
+}
+
+public void setNome(String nome) {
+	this.nome= nome;
+}
+
+public String getsobreNome() {
+	return sobreNome;
+}
+
+public void setsobreNome(String sobreNome) {
+	this.sobreNome = sobreNome;
+}
+
+public float getSal() {
+	return sal;
+}
+
+public void setSal(float sal) {
+	this.sal=sal;
+}
+
+}
+
+//PROGRAMA
+package main;
+import emprego.Empregado;
+
+public class ex2 {
+
+	public static void main(String[] args) {
+		Empregado emp1;
+		emp1 = new Empregado("Cindy", "Peixe", 12);
+		System.out.println(emp1.nome + emp1.sobreNome + emp1.sal);//USAR O RETURN NA PROXIMA
+		emp1.setSal(-327);
+		
+		if (emp1.sal<0) {
+			emp1.sal=0;
+		}
+		System.out.println(emp1.nome + emp1.sobreNome + emp1.sal);//USAR O RETURN NA PROXIMA
+		
 	}
 
 }
