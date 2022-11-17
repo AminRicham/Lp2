@@ -8,8 +8,8 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		
 		Conta c1, c2;
-		c1 = new Conta(1, "Vitor", 2, 150, 4);
-		c2 = new Conta(2, "Lucas", 2, 100, 3);
+		c1 = new Conta(1, "Vitor", 2, 150, 0);
+		c2 = new Conta(2, "Lucas", 2, 100, 0);
 		
 		/*
 		//TESTE DE IMPRESSAO e FUNCOES
@@ -30,36 +30,47 @@ public class Main {
 		if (conta != c1.getNumeroConta() || conta.getNumeroConta() != c2)
 			System.out.println("Conta invalida");
 		else{
-		
-		int escolha;
-		System.out.println("Boa tarde, insira a operacao desejada, sendo elas
-				   1-Sacar, 2-Depositar, 3-Transferir valor, 4-Consultar saldo");
-		float valor;	   
-		switch(escolha){
-			case 1:
-			System.out.println("Insira o valor a ser sacado de sua conta:")
-			valor = sc.nextFloat();
-			Sacar(conta,valor);
-			sc.nextFloat:
+			int escolha;
+			System.out.println("Boa tarde, insira a operacao desejada, sendo elas
+					   1-Sacar, 2-Depositar, 3-Transferir valor, 4-Consultar saldo");
+			float valor;	   
+			switch(escolha){
+				case 1:
+				System.out.println("Insira o valor a ser sacado de sua conta:")
+				valor = sc.nextFloat();
+				Sacar(conta,valor);
+				sc.nextFloat:
+				break;
 			
-			case 2:
-			System.out.println("Insira o valor a ser depositado em sua conta:");
-			valor = sc.nextFloat();
-			Depositar(conta,valor);
-			sc.nextFloat();
+				case 2:
+				System.out.println("Insira o valor a ser depositado em sua conta:");
+				valor = sc.nextFloat();
+				Depositar(conta,valor);
+				sc.nextFloat();
+				break;
 			
-			case 3:
-			System.out.println("Insira a conta a ser depositada");
-			conta2 = sc.nextInt();
-			System.out.println("Insira o valor a ser depositado:");
-			valor = sc.nextFloat();
-			//FAZER CHECAGEM DE CONTA2
-			Transferir(conta1,conta2, valor);
+				case 3:
+				System.out.println("Insira a conta a ser depositada");
+				conta2 = sc.nextInt();
+				System.out.println("Insira o valor a ser depositado:");
+				valor = sc.nextFloat();
+				//FAZER CHECAGEM DE CONTA2
+				Transferir(conta1,conta2, valor);
+				break;
 			
-			case 4:
-			System.out.println("O saldo da conta "+conta1+" é:"+ conta1.getSaldo());
+				case 4:
+				System.out.println("O saldo da conta "+conta1+" é:"+ conta1.getSaldo());
+				break;
 			
-		}//else		
+				default:
+				System.out.println("Operacao invalidar, insira novamente");
+				escolha = sc.nextInt();
+				break;
+
+			}//else	
+		System.out.println("Saldo da conta 1:"+c1.getSaldo());
+		System.out.println("Saldo da conta 2:"+c2.getSaldo());
+		  
 		
 		
 		
@@ -73,12 +84,21 @@ public class Main {
 	
 	//SAQUE
 	public static void Sacar(Conta conta, float valor) {
-		if(valor<=conta.saldo && valor>0) {
+		if (conta.tipoConta ==1 ){
+			if(valor>0) {
 			conta.saldo = conta.saldo - valor;			
 			System.out.println("O valor R$"+valor+" foi sacado.");
+			}
 		}
-		else
-			System.out.println("Operaçao invalida.");
+		else{
+			if(valor>0 && conta.saldo>=valor){
+			
+			conta.saldo = conta.saldo -valor;
+			System.out.println("O valor R$"+valor+"foi sacado.");
+			
+			}else
+				System.out.println("Operacao invalida");
+		}
 	}
 	
 	//TRANSFERENCIA
