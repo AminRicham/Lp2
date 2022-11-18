@@ -109,3 +109,35 @@ public class ex2 {
 	}
 
 }
+package aula;
+import java.util.Arrays;
+import java.util.Scanner;
+public class arrray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		float[] notas;
+		int numAlunos;
+		float soma=0;
+		System.out.println("Quantos alunos a turma possui?");
+		numAlunos = sc.nextInt();
+		
+		notas = new float [numAlunos];
+		for(int i=0; i<notas.length; i++) {
+			System.out.println("Insira o a nota do aluno "+i+":");
+			notas[i]= sc.nextFloat();
+			soma = notas[i]+ soma;
+		}
+		
+		Arrays.sort(notas);
+		
+		for(int i=0; i<notas.length; i++) {
+			System.out.println(notas[i]);
+			}
+		
+		System.out.println("\nMedia da turma="+soma/numAlunos);
+				
+	}
+
+}
