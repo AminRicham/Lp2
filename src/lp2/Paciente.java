@@ -6,11 +6,26 @@ public class Paciente {
 	private int telefone;
 	private String nome;
 	
-	public void verifica(int codigo) {
-		
+	public void busca(int codigo, Paciente vetor) {
+		int x=0;
+		for(int i=0; i<vetor.length; i++){
+			if(vetor.codigo[i] == codigo){
+				x++;
+			}
+		}
+		if(x>0){
+			System.out.println("Encontrado");
+		}
+		else{
+			System.out.println("Nao encontrado");
+		}
+			
 	}
 	
-	
+	public String toString(){
+		return("Codigo:"+codigo+" cpf: "+cpf+"\ntelefone:"+telefone+"nome"+nome):
+		
+	}
 	
 	public Paciente(int codigo, int cpf, int telefone, String nome) {
 		this.codigo = codigo;
