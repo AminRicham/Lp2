@@ -8,6 +8,7 @@ public class CadastroPaciente {
 		Scanner sc = new Scanner(System.in);
 		int op;
 		int cont=0;
+		int j=0;
 		Paciente[] paciente = new Paciente[3];
 	
 		do {
@@ -41,9 +42,10 @@ public class CadastroPaciente {
 			Paciente.busca(sc.nextInt(), paciente);
 			break;
 		case 3:
-			
-			while(paciente[i]!=NULL){
-				System.out.println("Paciente"+(i+1)+"\n"+paciente[i]);
+			//Se estiver vazio
+			while(paciente[j]!=NULL){
+				System.out.println("Paciente"+(j+1)+"\n"+paciente[j]);
+				j++
 			}
 			break;
 		case 4:
