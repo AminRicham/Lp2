@@ -8,8 +8,7 @@ public class CadastroPaciente {
 		Scanner sc = new Scanner(System.in);
 		int op;
 		int cont=0;
-		int j=0;
-		Paciente[] paciente = new Paciente[3];
+		Paciente[] paciente = new Paciente[50];
 	
 		do {
 		System.out.println("Insira a opção:");
@@ -42,11 +41,11 @@ public class CadastroPaciente {
 			Paciente.busca(sc.nextInt(), paciente);
 			break;
 		case 3:
-			//Se estiver vazio
-			while(paciente[j]!=NULL){
-				System.out.println("Paciente"+(j+1)+"\n"+paciente[j]);
-				j++
-			}
+				for(int i=0; i<paciente.length; i++) {
+					if (paciente[i]!= null) {
+						System.out.println("Paciente"+(i+1)+"\n"+paciente[i]);
+					}
+				}
 			break;
 		case 4:
 			System.out.println("O programa sera encerrado");
