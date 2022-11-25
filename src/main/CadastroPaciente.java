@@ -20,7 +20,7 @@ public class CadastroPaciente {
 		
 		switch(op) {
 		case 1:
-			if(cont<50){
+			if(cont<paciente.length){
 				paciente[cont] = new Paciente();
 				System.out.println("Codigo");
 				paciente[cont].setCodigo(sc.nextInt());
@@ -39,7 +39,6 @@ public class CadastroPaciente {
 		case 2:
 			System.out.println("Insira o codigo do cliente:");
 			Paciente.busca(sc.nextInt(), paciente);
-				
 			break;
 		case 3:
 			for(int i=0; i<paciente.length;i++){
