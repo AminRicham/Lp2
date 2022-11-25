@@ -1,16 +1,16 @@
-package main;
+package cadastroPaciente;
 import java.util.Scanner;
-
-import lp2.Paciente;
+import paciente.Paciente;
 
 public class CadastroPaciente {
-
+	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int op;
-		int i=0;
+		int cont=0;
 		Paciente[] paciente = new Paciente[3];
-		while(1==1){
+	
+		do {
 		System.out.println("Insira a opção:");
 		System.out.println("1-cadastrar paciente");
 		System.out.println("2-Buscar o cliente");
@@ -20,17 +20,17 @@ public class CadastroPaciente {
 		
 		switch(op) {
 		case 1:
-			if(i<50){
-				paciente[i] = new Paciente();
+			if(cont<50){
+				paciente[cont] = new Paciente();
 				System.out.println("Codigo");
-				paciente[i].setCodigo(sc.nextInt());
+				paciente[cont].setCodigo(sc.nextInt());
 				System.out.println("Nome:");
-				paciente[i].setNome(sc.nextLine());
+				paciente[cont].setNome(sc.next());
 				System.out.println("CPF:");
-				paciente[i].setCpf(sc.nextInt());
+				paciente[cont].setCpf(sc.nextInt());
 				System.out.println("Telefone");
-				paciente[i].setTelefone(sc.nextInt());
-				i++;
+				paciente[cont].setTelefone(sc.nextInt());
+				cont++;
 			}
 			else{
 				System.out.println("Numero limite de pacientes");
@@ -38,23 +38,22 @@ public class CadastroPaciente {
 			break;
 		case 2:
 			System.out.println("Insira o codigo do cliente:");
-			paciente.busca(sc.next(), paciente);
+			Paciente.busca(sc.nextInt(), paciente);
 				
 			break;
 		case 3:
-			for(int i=0; i<paciente.lenght;i++){
-				System.out.println("Paciente"+i+"\n"paciente[i]);
+			for(int i=0; i<paciente.length;i++){
+				System.out.println("Paciente"+(i+1)+"\n"+paciente[i]);
 			}
 			break;
 		case 4:
 			System.out.println("O programa sera encerrado");
 			break;
 		default:
-			System.out.println("Invalido");
+			System.out.println("Invalido, insira novamente\n");
+			break;
 		}
-		break;
-	}
-		
-	}
-
+	}while(op!=4);
+	
+}
 }
