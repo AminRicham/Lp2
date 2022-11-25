@@ -15,7 +15,7 @@ public class Paciente {
 		}
 		if(x>0){
 			System.out.println("Encontrado");
-			System.out.println(paciente);
+			System.out.println(toString());
 		}
 		else{
 			System.out.println("Nao encontrado");
