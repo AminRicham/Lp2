@@ -41,7 +41,8 @@ public class CadastroPaciente {
 			Paciente.busca(sc.nextInt(), paciente);
 			break;
 		case 3:
-			for(int i=0; i<paciente.length;i++){
+			
+			while(paciente[i]!=NULL){
 				System.out.println("Paciente"+(i+1)+"\n"+paciente[i]);
 			}
 			break;
