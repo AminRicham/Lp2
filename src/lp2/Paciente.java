@@ -7,20 +7,17 @@ public class Paciente {
 	private String nome;
 	
 	public static void busca(int codigo, Paciente[] vetor) {
-		int x=0;
 		for(int i=0; i<vetor.length; i++){
-			if(vetor[i].codigo == codigo){
-				x++;
+			if (vetor[i]!=null) {
+				if(vetor[i].codigo == codigo){
+					System.out.println("Encontrado");
+					System.out.println("Codigo:"+vetor[i].codigo);
+					System.out.println("Cpf:"+vetor[i].cpf);
+					System.out.println("telefone:"+vetor[i].telefone);
+					System.out.println("nome:"+vetor[i].nome);
+				}
 			}
 		}
-		if(x>0){
-			System.out.println("Encontrado");
-			System.out.println(toString());
-		}
-		else{
-			System.out.println("Nao encontrado");
-		}
-			
 	}
 	
 	public String toString(){
