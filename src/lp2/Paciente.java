@@ -1,4 +1,4 @@
-package lp2;
+package paciente;
 
 public class Paciente {
 	private int codigo;
@@ -6,15 +6,16 @@ public class Paciente {
 	private int telefone;
 	private String nome;
 	
-	public void busca(int codigo, Paciente vetor) {
+	public static void busca(int codigo, Paciente[] vetor) {
 		int x=0;
 		for(int i=0; i<vetor.length; i++){
-			if(vetor.codigo[i] == codigo){
+			if(vetor[i].codigo == codigo){
 				x++;
 			}
 		}
 		if(x>0){
 			System.out.println("Encontrado");
+			System.out.println(paciente);
 		}
 		else{
 			System.out.println("Nao encontrado");
@@ -23,7 +24,7 @@ public class Paciente {
 	}
 	
 	public String toString(){
-		return("Codigo:"+codigo+" cpf: "+cpf+"\ntelefone:"+telefone+"nome"+nome):
+		return("Codigo:"+codigo+" cpf: "+cpf+"\ntelefone:"+telefone+" \nnome: "+nome);
 		
 	}
 	
@@ -33,6 +34,7 @@ public class Paciente {
 		this.telefone = telefone;
 		this.nome = nome;
 	}
+	
 	public Paciente() {
 		
 	}
@@ -61,6 +63,4 @@ public class Paciente {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	
 }
