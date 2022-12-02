@@ -1,3 +1,5 @@
 next()=1 palavra por vez(entre ou espaço)
 nextLine()= ate apertar enter
 for quando se sabe o limite(numero de reptiçoes)
+
+PORQUE CRIAR OUTROS PAKAGES QUANDO PODE SE CRIAR UMA CLASSE
