@@ -22,7 +22,7 @@ public class MainContatos {
 			op = sc.nextInt();
 			switch(op) {
 			case 1:
-				contatos.[contador] = new Contato();// contato = new Contato;
+				contatos.[contador] = new Contato();
 				System.out.println("Insira o nome:");
 				contato.setNome(sc.nextLine());
 				sc.nextLine();
